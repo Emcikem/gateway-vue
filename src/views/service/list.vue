@@ -10,12 +10,12 @@
           添加HTTP服务
         </el-button>
       </router-link>
-      <router-link :to="'/service/service_create_http/'">
+      <router-link :to="'/service/service_create_tcp/'">
         <el-button class="filter-item" style="margin-left: 10px;" type="primary" icon="el-icon-edit">
           添加TCP服务
         </el-button>
       </router-link>
-      <router-link :to="'/service/service_create_http/'">
+      <router-link :to="'/service/service_create_grpc/'">
         <el-button class="filter-item" style="margin-left: 10px;" type="primary" icon="el-icon-edit">
           添加GRPC服务
         </el-button>
@@ -78,10 +78,14 @@
               统计
             </el-button>
           </router-link>
-          <router-link :to="'/service/service_edit_http/' + row.id">
-            <el-button type="primary" size="mini">
-              修改
-            </el-button>
+          <router-link v-if="row.load_type===0" :to="'/service/service_edit_http/' + row.id">
+            <el-button type="primary" size="mini">修改</el-button>
+          </router-link>
+          <router-link v-if="row.load_type===1" :to="'/service/service_edit_tcp/' + row.id">
+            <el-button type="primary" size="mini">修改</el-button>
+          </router-link>
+          <router-link v-if="row.load_type===2" :to="'/service/service_edit_grpc/' + row.id">
+            <el-button type="primary" size="mini">修改</el-button>
           </router-link>
           <el-button size="mini" type="danger" @click="handleDelete(row,$index)">
             删除
@@ -128,6 +132,16 @@ export default {
           service_name: 'name',
           service_desc: 'desc',
           load_type: 1,
+          service_addr: 'http://127.0.0.1',
+          qps: 1,
+          qpd: 10,
+          total_node: 1
+        },
+        {
+          id: 2,
+          service_name: 'name',
+          service_desc: 'desc',
+          load_type: 2,
           service_addr: 'http://127.0.0.1',
           qps: 1,
           qpd: 10,
