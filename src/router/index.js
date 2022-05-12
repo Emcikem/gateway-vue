@@ -87,6 +87,27 @@ export const constantRoutes = [
         component: () => import('@/views/service/list'),
         name: '服务列表',
         meta: { title: '服务列表', icon: 'component', affix: false }
+      },
+      {
+        path: 'service_create_http',
+        component: () => import('@/views/service/http'),
+        name: '创建',
+        meta: { title: '创建HTTP服务', icon: 'component', affix: false },
+        hidden: true
+      },
+      {
+        path: 'service_edit_http/:id(\\d+)',
+        component: () => import('@/views/service/http'),
+        name: '修改',
+        meta: { title: '修改服务', icon: 'component', affix: false },
+        hidden: true
+      },
+      {
+        path: 'service_state/:id(\\d+)',
+        component: () => import('@/views/service/state'),
+        name: '统计',
+        meta: { title: '服务统计', icon: 'component', affix: false },
+        hidden: true
       }
     ]
   }
@@ -99,7 +120,7 @@ export const constantRoutes = [
 export const asyncRoutes = []
 
 const createRouter = () => new Router({
-  // mode: 'history', // require service support
+  mode: 'history', // require service support
   scrollBehavior: () => ({ y: 0 }),
   routes: constantRoutes
 })

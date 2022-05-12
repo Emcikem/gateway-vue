@@ -10,9 +10,32 @@ export function serviceList(query) {
 
 export function serviceDelete(id) {
   return request({
-    'url': 'service/service_delete',
+    url: 'service/service_delete',
     method: 'get',
     params: id
   })
 }
 
+export function serviceAddHttp(data) {
+  return request({
+    url: 'service/service_add_http',
+    method: 'post',
+    data
+  })
+}
+
+export function serviceDetail(id) {
+  return request({
+    url: 'service/service_detail_http',
+    method: 'get',
+    params: id
+  })
+}
+
+export function serviceUpdateHttp(data) {
+  return request({
+    url: 'service/service_update_http',
+    method: 'post',
+    data
+  })
+}

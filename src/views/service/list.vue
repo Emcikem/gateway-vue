@@ -5,9 +5,21 @@
       <el-button v-waves class="filter-item" type="primary" icon="el-icon-search" @click="handleFilter">
         Search
       </el-button>
-      <el-button class="filter-item" style="margin-left: 10px;" type="primary" icon="el-icon-edit" @click="handleCreate">
-        Add
-      </el-button>
+      <router-link :to="'/service/service_create_http/'">
+        <el-button class="filter-item" style="margin-left: 10px;" type="primary" icon="el-icon-edit">
+          添加HTTP服务
+        </el-button>
+      </router-link>
+      <router-link :to="'/service/service_create_http/'">
+        <el-button class="filter-item" style="margin-left: 10px;" type="primary" icon="el-icon-edit">
+          添加TCP服务
+        </el-button>
+      </router-link>
+      <router-link :to="'/service/service_create_http/'">
+        <el-button class="filter-item" style="margin-left: 10px;" type="primary" icon="el-icon-edit">
+          添加GRPC服务
+        </el-button>
+      </router-link>
     </div>
 
     <el-table
@@ -61,12 +73,16 @@
       </el-table-column>
       <el-table-column label="操作" align="center" width="230" class-name="small-padding fixed-width">
         <template slot-scope="{row,$index}">
-          <el-button type="primary" size="mini">
-            统计
-          </el-button>
-          <el-button type="primary" size="mini" @click="handleUpdate(row)">
-            修改
-          </el-button>
+          <router-link :to="'/service/service_state/' + row.id">
+            <el-button type="primary" size="mini">
+              统计
+            </el-button>
+          </router-link>
+          <router-link :to="'/service/service_edit_http/' + row.id">
+            <el-button type="primary" size="mini">
+              修改
+            </el-button>
+          </router-link>
           <el-button size="mini" type="danger" @click="handleDelete(row,$index)">
             删除
           </el-button>
@@ -89,7 +105,6 @@ const loadTypeOptions = [
   { key: '2', display_name: 'GRPC' }
 ]
 
-// arr to obj, such as { CN : "China", US : "USA" }
 const loadTypeKeyValue = loadTypeOptions.reduce((acc, cur) => {
   acc[cur.key] = cur.display_name
   return acc
