@@ -65,14 +65,10 @@ export default {
       this.chart.setOption({
         backgroundColor: '#394056',
         title: {
-          top: 20,
           text: this.data.title,
           textStyle: {
-            fontWeight: 'normal',
-            fontSize: 16,
-            color: '#F1F1F3'
-          },
-          left: '1%'
+            fontSize: 16
+          }
         },
         tooltip: {
           trigger: 'axis',
@@ -103,12 +99,9 @@ export default {
           containLabel: true
         },
         xAxis: [{
-          type: 'category',
-          boundaryGap: false,
+          boundaryGap: true,
           axisLine: {
-            lineStyle: {
-              color: '#57617B'
-            }
+            show: false
           },
           data: ['00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00']
         }],
