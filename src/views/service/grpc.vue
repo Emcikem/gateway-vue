@@ -69,11 +69,7 @@
 </template>
 
 <script>
-import {
-  serviceDetail,
-  serviceAddGrpc,
-  serviceUpdateGrpc
-} from '@/api/service'
+import { serviceDetail, serviceAddGrpc, serviceUpdateGrpc } from '@/api/service'
 export default {
   components: { },
   data() {
