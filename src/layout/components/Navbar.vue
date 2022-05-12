@@ -34,7 +34,7 @@
     </div>
 
     <el-dialog title="修改密码" :visible.sync="dialogFormVisible">
-      <el-form ref="dataForm" :rules="rules" :model="temp" label-position="left" label-width="70px" style="margin-left:50px;">
+      <el-form ref="dataForm" :rules="rules" :model="temp" label-position="left" label-width="70px" style="width: 400px; margin-left:50px;">
         <el-form-item label="用户名" prop="username">
           <el-input v-model="temp.username" />
         </el-form-item>
@@ -62,6 +62,7 @@ import Hamburger from '@/components/Hamburger'
 import ErrorLog from '@/components/ErrorLog'
 import Screenfull from '@/components/Screenfull'
 import SizeSelect from '@/components/SizeSelect'
+import { changePwd } from '@/api/user'
 
 export default {
   components: {
@@ -102,7 +103,19 @@ export default {
       this.dialogFormVisible = true
     },
     handleChangePwd() {
-      alert('修改成功')
+      this.$refs['dataForm'].validate((valid) => {
+        if (valid) {
+          changePwd(this.temp).then(() => {
+            this.dialogFormVisible = false
+            this.$notify({
+              title: 'Success',
+              message: '修改密码成功',
+              type: 'success',
+              duration: 2000
+            })
+          })
+        }
+      })
     }
   }
 }
