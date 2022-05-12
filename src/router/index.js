@@ -104,7 +104,7 @@ export const constantRoutes = [
       },
       {
         path: 'service_state/:id(\\d+)',
-        component: () => import('@/views/service/state'),
+        component: () => import('@/views/service/stat'),
         name: '统计',
         meta: { title: '服务统计', icon: 'component', affix: false },
         hidden: true
