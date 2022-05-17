@@ -12,7 +12,7 @@ const users = {
   'admin-token': {
     roles: ['admin'],
     introduction: 'I am a super administrator',
-    avatar: 'https://img.clinicmed.net/uploadimg/image/20200922/16007768915f69eabbbf20d0.87393375.gif',
+    avatar: 'https://i0.hdslb.com/bfs/article/5f3e1aa5384e8f915d3a8a02b6a5b72128d371af.gif',
     name: 'Super Admin'
   },
   'editor-token': {

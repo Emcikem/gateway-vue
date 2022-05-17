@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function serviceList(query) {
   return request({
-    'url': 'service/service_list',
+    'url': '/service/service_list',
     method: 'get',
     params: query
   })
@@ -10,7 +10,7 @@ export function serviceList(query) {
 
 export function serviceDelete(id) {
   return request({
-    url: 'service/service_delete',
+    url: '/service/service_delete',
     method: 'get',
     params: id
   })
@@ -18,7 +18,7 @@ export function serviceDelete(id) {
 
 export function serviceAddHttp(data) {
   return request({
-    url: 'service/service_add_http',
+    url: '/service/service_add_http',
     method: 'post',
     data
   })
@@ -26,7 +26,7 @@ export function serviceAddHttp(data) {
 
 export function serviceAddTcp(data) {
   return request({
-    url: 'service/service_add_tcp',
+    url: '/service/service_add_tcp',
     method: 'post',
     data
   })

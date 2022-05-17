@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function login(data) {
   return request({
-    url: '/admin_log/login',
+    url: '/admin/login',
     method: 'post',
     data
   })
@@ -18,14 +18,14 @@ export function getInfo(token) {
 
 export function logout() {
   return request({
-    url: '/admin_login/logout',
-    method: 'post'
+    url: '/admin/logout',
+    method: 'get'
   })
 }
 
 export function changePwd(data) {
   return request({
-    url: 'admin/change_pwd',
+    url: '/admin/change_pwd',
     method: 'post',
     data
   })

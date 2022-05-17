@@ -126,31 +126,9 @@ export default {
   data() {
     return {
       tableKey: 0,
-      list: [
-        {
-          id: 1,
-          service_name: 'name',
-          service_desc: 'desc',
-          load_type: 1,
-          service_addr: 'http://127.0.0.1',
-          qps: 1,
-          qpd: 10,
-          total_node: 1
-        },
-        {
-          id: 2,
-          service_name: 'name',
-          service_desc: 'desc',
-          load_type: 2,
-          service_addr: 'http://127.0.0.1',
-          qps: 1,
-          qpd: 10,
-          total_node: 1
-        }
-      ],
+      list: [],
       total: 0,
-      listLoading: false,
-      // listLoading: true,
+      listLoading: true,
       listQuery: {
         page_no: 1,
         page_size: 20,
@@ -162,7 +140,7 @@ export default {
     }
   },
   created() {
-    // this.getList()
+    this.getList()
   },
   methods: {
     getList() {
