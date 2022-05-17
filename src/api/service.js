@@ -10,8 +10,8 @@ export function serviceList(query) {
 
 export function serviceDelete(id) {
   return request({
-    url: '/service/service_delete',
-    method: 'get',
+    url: '/service/delete',
+    method: 'delete',
     params: id
   })
 }
